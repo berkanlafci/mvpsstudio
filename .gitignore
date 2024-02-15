@@ -161,4 +161,5 @@ cython_debug/
 
 # added for this project
 .DS_Store
+data/
 
