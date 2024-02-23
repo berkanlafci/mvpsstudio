@@ -18,4 +18,16 @@ Multiview photometric stereo (MVPS) studio hardware and software to build a smal
 
 ## Software
 
+1 - Install anaconda or miniconda. Then, run the following command to install required packages:
+
+```bash
+conda env create -f mvps.yml
+```
+
+2 - Install mvps studio package provided with this repository:
+
+```bash
+pip install git+https://github.com/berkanlafci/mvpsstudio.git
+```
+
 PS: This repository is still under development. Majority of the codes will be released with the paper publication.
