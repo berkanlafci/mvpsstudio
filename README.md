@@ -16,7 +16,7 @@
 
 #### Intel RealSense D405  
 
-<p align="justify"> Intel RealSense D405 is a short range camera with depth from stereo feature. Depth from stereo is information captured by the two cameras located on the same horizontal line. The cameras can reach to sub-milimiter accuracy. </p>
+<p align="justify"> Intel RealSense D405 is a short range camera with depth from stereo feature. Depth from stereo is information captured by the two cameras located on the same horizontal line. The cameras can reach to sub-milimeter accuracy. </p>
 
 ## Software
 
