@@ -115,7 +115,7 @@ class CameraManager():
     
     def saveImage(self, numpyImage, acquisitionDir, imageCounter):
         """
-        Acquire stream from connected cameras
+        Save stream as images
 
         :param numpyImage:          Image in numpy array format
         :param acquisitionDir:      Directory to save recorded images
