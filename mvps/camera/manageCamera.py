@@ -109,6 +109,7 @@ class CameraManager():
                 self.saveImage(numpyImage, acquisitionDir, imageCounter)
                 
                 imageCounter += 1
+    
     #-------------------------------#
     # save images
     
