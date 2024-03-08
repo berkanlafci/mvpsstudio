@@ -24,6 +24,7 @@
 
 ```bash
 conda env create -f mvps.yml
+conda activate mvps
 ```
 
 <p align="justify"> 2 - Install mvps studio package provided with this repository: </p>
