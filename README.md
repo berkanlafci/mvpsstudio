@@ -12,25 +12,54 @@
 [![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi%204B-Link-violet)](https://www.digitec.ch/de/s1/product/raspberry-pi-4-8g-model-b-entwicklungsboard-kit-13276941?utm_source=google&utm_medium=cpc&campaignid=16472930352&adgroupid=136662242280&adid=585921168913&dgCidg=EAIaIQobChMI85HThYqPgwMV6BMGAB28iw8PEAAYAiAAEgLvSPD_BwE&gad_source=1&gclsrc=ds)
 [![LED](https://img.shields.io/badge/LED_Array-Link-red)](https://www.bastelgarage.ch/dfrobot-neopixel-ring-24x-ws2812-rgb-led)
 
-### Camera
+### Cameras
 
-#### Intel RealSense D405  
+#### Intel RealSense D405
 
 <p align="justify"> Intel RealSense D405 is a short range camera with depth from stereo feature. Depth from stereo is information captured by the two cameras located on the same horizontal line. The cameras can reach to sub-milimeter accuracy. </p>
 
+### Controllers
+
+#### Raspberry Pi
+
+<p align="justify"> Raspberry Pi 4B with 8GB RAM is used to control LED ring arrays. Raspberry Pi pin number should match the connected pin for LED ring array. After connections are established, raspberry Pi can be used to trigger light illumination with different patterns. </p>
+
+#### Linux Computer with GPU
+
+<p align="justify"> A laptop with NVIDIA GPU that runs Ubuntu 22.04 is used to perform data acquisition, storage, 3D geometry reconstruction and analysis. </p>
+
 ## Software
 
-<p align="justify"> 1 - Install anaconda or miniconda. Then, run the following command to install required packages: </p>
+### Installation
+
+<p align="justify"> 1 - Install anaconda or miniconda. Then, run the following command to install required packages:</p>
 
 ```bash
 conda env create -f mvps.yml
 conda activate mvps
 ```
 
-<p align="justify"> 2 - Install mvps studio package provided with this repository: </p>
+<p align="justify"> 2 - Install mvps studio package provided with this repository:</p>
 
 ```bash
 pip install git+https://github.com/berkanlafci/mvpsstudio.git
 ```
 
-<p align="justify"> PS: This repository is still under development. Majority of the codes will be released with the paper publication. </p>
+<details><summary>3 - (Optional) Install PyCOLMAP with CUDA Support (Click to Expand)</summary>
+ 
+<p align="justify"> You need to build PyCOLMAP from source for CUDA support. If you do not want to enable CUDA support for PyCOLMAP or you do not have a GPU with CUDA support, the conda environment in step 1 already includes PyCOLMAP for CPU. So, you do not need to install PyCOLMAP again and you can skip this step. Please note that, dense reconstruction from PyCOLMAP will not work without the CUDA support. </p>
+
+To install PyCOLMAP with CUDA support, please follow the instructions [here](https://github.com/colmap/colmap/tree/main/pycolmap).
+</details>
+
+### Reconstruction
+
+<p align="justify"> The camera calibration and localization are performed by PyCOLMAP library. Attached boards at the floor and sides of the scanner's outer frame helped to extract required features for matching. </p>
+
+#### COLMAP Reconstruction
+
+<p align="justify"> In addition to camera localization and calibration, PyCOLMAP is used as baseline reconstruction method. </p>
+
+## Notes
+
+<p align="justify"> This repository is still under development. Majority of the codes will be released with the paper publication. </p>
