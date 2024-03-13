@@ -26,7 +26,6 @@ dependencies:
   - jpeg=9e=h5eee18b_1
   - kiwisolver=1.4.4=py39h6a678d5_0
   - krb5=1.20.1=h143b758_1
-  - lcms2=2.12=h3be6417_0
   - ld_impl_linux-64=2.38=h1181459_1
   - lerc=3.0=h295c915_0
   - libbrotlicommon=1.0.9=h5eee18b_7
@@ -44,15 +43,12 @@ dependencies:
   - libpng=1.6.39=h5eee18b_0
   - libpq=12.17=hdbd6064_0
   - libstdcxx-ng=11.2.0=h1234567_1
-  - libtiff=4.5.1=h6a678d5_0
   - libuuid=1.41.5=h5eee18b_0
   - libwebp-base=1.3.2=h5eee18b_0
   - libxcb=1.15=h7f8727e_0
   - libxkbcommon=1.0.1=h5eee18b_1
   - libxml2=2.10.4=hf1b16e4_1
   - lz4-c=1.9.4=h6a678d5_0
-  - matplotlib=3.8.0=py39hf3d152e_2
-  - matplotlib-base=3.8.0=py39h1128e8f_0
   - mkl=2023.1.0=h213fc3f_46344
   - mkl-service=2.4.0=py39h5eee18b_1
   - mkl_fft=1.3.8=py39h5eee18b_0
@@ -62,11 +58,9 @@ dependencies:
   - ncurses=6.4=h6a678d5_0
   - numpy=1.26.3=py39h5f9d8c6_0
   - numpy-base=1.26.3=py39hb5e798b_0
-  - openjpeg=2.4.0=h3ad879b_0
   - openssl=3.0.13=h7f8727e_0
   - packaging=23.1=py39h06a4308_0
   - pcre=8.45=h295c915_0
-  - pillow=10.2.0=py39h5eee18b_0
   - pip=23.3.1=py39h06a4308_0
   - ply=3.11=py39h06a4308_0
   - pyparsing=3.0.9=py39h06a4308_0
@@ -92,5 +86,7 @@ dependencies:
   - zlib=1.2.13=h5eee18b_0
   - zstd=1.5.5=hc292b87_0
   - pip:
-      - pymeshlab==2023.12.post1
+      - matplotlib==3.8.3
+      - pillow==10.2.0
+      - pycolmap
       - pyrealsense2==2.54.2.5684
