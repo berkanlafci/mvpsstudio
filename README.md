@@ -13,13 +13,14 @@
 [![LED](https://img.shields.io/badge/LED_Array-Link-red)](https://www.bastelgarage.ch/dfrobot-neopixel-ring-24x-ws2812-rgb-led)
 
 ### Cameras
-
+___
 #### Intel RealSense D405
 
 <p align="justify"> Intel RealSense D405 is a short range camera with depth from stereo feature. Depth from stereo is information captured by the two cameras located on the same horizontal line. The cameras can reach to sub-milimeter accuracy. </p>
 
-### Controllers
 
+### Controllers
+___
 #### Raspberry Pi
 
 <p align="justify"> Raspberry Pi 4B with 8GB RAM is used to control LED ring arrays. Raspberry Pi pin number should match the connected pin for LED ring array. After connections are established, raspberry Pi can be used to trigger light illumination with different patterns. </p>
@@ -31,7 +32,7 @@
 ## Software
 
 ### Installation
-
+___
 <p align="justify"> 1 - Install anaconda or miniconda. Then, run the following command to install required packages:</p>
 
 ```bash
@@ -45,7 +46,7 @@ conda activate mvps
 pip install git+https://github.com/berkanlafci/mvpsstudio.git
 ```
 
-<details><summary>3 - (Optional) Install PyCOLMAP with CUDA Support (Click to Expand)</summary>
+<details><summary>3 - (Optional) Install PyCOLMAP with CUDA Support (Click to Expand)</summary>  
  
 <p align="justify"> You need to build PyCOLMAP from source for CUDA support. If you do not want to enable CUDA support for PyCOLMAP or you do not have a GPU with CUDA support, the conda environment in step 1 already includes PyCOLMAP for CPU. So, you do not need to install PyCOLMAP again and you can skip this step. Please note that, dense reconstruction from PyCOLMAP will not work without the CUDA support. </p>
 
@@ -53,12 +54,16 @@ To install PyCOLMAP with CUDA support, please follow the instructions [here](htt
 </details>
 
 ### Reconstruction
-
+___
 <p align="justify"> The camera calibration and localization are performed by PyCOLMAP library. Attached boards at the floor and sides of the scanner's outer frame helped to extract required features for matching. </p>
 
 #### COLMAP Reconstruction
 
 <p align="justify"> In addition to camera localization and calibration, PyCOLMAP is used as baseline reconstruction method. </p>
+
+## Acknowledgements
+
+Dr. Berkan Lafci and Prof. Dr. Bjoern Menze are supported by [SNF Sinergia Grant (209412)](https://data.snf.ch/grants/grant/209412).
 
 ## Notes
 
