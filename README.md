@@ -59,7 +59,12 @@ ___
 
 #### COLMAP Reconstruction
 
-<p align="justify"> In addition to camera localization and calibration, PyCOLMAP is used as baseline reconstruction method. </p>
+<p align="justify"> In addition to camera localization and calibration, PyCOLMAP is used as baseline reconstruction method. PyCOLMAP reconstruction can be performed by running the following command in the terminal: </p>
+
+```bash
+conda activate mvps
+bash recon.sh
+```
 
 ## Acknowledgements
 
