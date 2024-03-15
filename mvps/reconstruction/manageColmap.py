@@ -54,39 +54,39 @@ class ColmapManager():
     #-------------------------------#
     # undistort images
     
-    def undistortImages(self, mvpsPath, sparseDir, imageDir):
+    def undistortImages(self, mvsPath, sparseDir, imageDir):
         """
         Undistort images
         """
 
-        pycolmap.undistort_images(mvpsPath, sparseDir, imageDir)
+        pycolmap.undistort_images(mvsPath, sparseDir, imageDir)
     
     #-------------------------------#
     # patch match stereo
     
-    def patchMatchStereo(self, mvpsPath):
+    def patchMatchStereo(self, mvsPath):
         """
         Patch match stereo
         """
 
-        pycolmap.patch_match_stereo(mvpsPath)
+        pycolmap.patch_match_stereo(mvsPath)
 
     #-------------------------------#
     # dense reconstruction
         
-    def denseReconstruction(self, mvpsPath):
+    def denseReconstruction(self, mvsPath):
         """
         Dense reconstruction
         """
 
-        pycolmap.stereo_fusion(mvpsPath + "/dense.ply", mvpsPath)
+        pycolmap.stereo_fusion(mvsPath + "/dense.ply", mvsPath)
 
     #-------------------------------#
     # poisson meshing
 
-    def poissonMeshing(self, mvpsPath):
+    def poissonMeshing(self, mvsPath):
         """
         Poisson meshing
         """
 
-        pycolmap.poisson_meshing(mvpsPath + "/dense.ply", mvpsPath + "/poisson_mesh.ply")
+        pycolmap.poisson_meshing(mvsPath + "/dense.ply", mvsPath + "/poisson_mesh.ply")
