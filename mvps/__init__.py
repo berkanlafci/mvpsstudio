@@ -12,3 +12,6 @@ from mvps.camera import CameraManager
 
 # light functions
 from mvps.light import RaspberryManager
+
+# recon functions
+from mvps.reconstruction import ColmapManager
