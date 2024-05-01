@@ -31,7 +31,58 @@ ___
 
 ## Software
 
-### Installation
+### Raspberry Pi Setup
+___
+1 - Please follow the official Raspberry Pi dcoumentation for operating system setup: [OS Setup](https://www.raspberrypi.com/documentation/computers/getting-started.html)
+
+<p align="justify"> It is important to name the Raspberry Pi as "light" and user name as "person" with the sudo rights during the operating system installation. Raspberry Pi name will be used as "light" and user name on Raspberry Pi will be used as "person" in the following steps of installation and light related scripts in this package.</p>
+
+<details><summary>2 - Setting up SSH for connection between Linux Computer and Raspberry Pi </summary>  
+
+First, you need to connect Linux computer to Raspberry Pi with an ethernet cable. After physical connection with ethernet cable is established, you need to go to network connection settings in Linux Computer. In network connection settings for wired connection between Linux Computer and Raspberry Pi, under ipv4, you need to choose the option "shared to other computers". Then, you need to apply changes before closing the window.
+
+Next step is to create, public ssh key in Linux Computer. Please run the following command:
+```bash
+mkdir ~/.ssh/
+cd ~/.ssh/
+ssh-keygen
+```
+While creating the ssh key, change the file name to "light". This should create a file called "light.pub" and "light" under the same directory.
+
+Next step is to create a config file for ssh connection. Please run the following command in the terminal of Linux Computer.
+```bash
+nano ~/.ssh/config
+```
+After the config file is opened, please copy paste the text below inside the config file.
+```bash
+Host light
+    HostName light.local
+    User person
+    IdentityFile ~/.ssh/light
+```
+Exit the file after saving.
+
+Please copy the public ssh key available in "light.pub" file. Now, you need to go to Raspberry Pi and run the following commands:
+```bash
+mkdir .ssh/
+cd .ssh/
+nano authorized_keys
+```
+Paste the public key from Linux Computer (copied in previous step from "light.pub" file) inside the "authorized_keys" file and exit the file after saving.
+
+</details>  
+
+<p align="justify"> This step is important to run the automated data acquisition functions related to light illumination. You have an option to give other names to Raspberry Pi and user but any change in names requires modification in light control and acquisition scripts.</p>
+
+3 - Setup Python packages for light control on Raspberry Pi:
+```bash
+python3 -m venv ~/.light
+sudo ~/.light/bin/pip3 install rpi_ws281x
+sudo ~/.light/bin/pip3 install adafruit-circuitpython-neopixel
+sudo ~/.light/bin/python3 -m pip install --force-reinstall adafruit-blinka
+```
+
+### MVPS Studio Installation
 ___
 <p align="justify"> 1 - Install anaconda or miniconda. Then, run the following command to install required packages:</p>
 
