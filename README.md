@@ -18,6 +18,11 @@ ___
 
 <p align="justify"> Intel RealSense D405 is a short range camera with depth from stereo feature. Depth from stereo is information captured by the two cameras located on the same horizontal line. The cameras can reach to sub-milimeter accuracy. </p>
 
+### Checkerboards
+___
+<p align="justify"> Checkerboards are placed on the ground and sides of the scanner hardware setup for camera calibration. The functions to produce checkerboards with aruco markers are published under camera and examples. Below is an example of checkerboard used in the setup.</p>
+
+![checkerboard](docs/_img/checkerboard.png)
 
 ### Controllers
 ___
