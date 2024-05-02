@@ -87,6 +87,7 @@ dependencies:
   - zstd=1.5.5=hc292b87_0
   - pip:
       - matplotlib==3.8.3
+      - opencv-python==4.9.0.80
       - pillow==10.2.0
-      - pycolmap
+      - pycolmap==0.6.1
       - pyrealsense2==2.54.2.5684

@@ -9,6 +9,7 @@ __version__ = "1.0.0"
 
 # camera functions
 from mvps.camera import CameraManager
+from mvps.camera import BoardManager
 
 # light functions
 from mvps.light import RaspberryManager

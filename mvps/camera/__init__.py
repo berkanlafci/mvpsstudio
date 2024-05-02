@@ -5,3 +5,4 @@
 #-----
 
 from mvps.camera.manageCamera import CameraManager
+from mvps.camera.manageBoard import BoardManager
