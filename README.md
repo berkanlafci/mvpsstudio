@@ -17,7 +17,7 @@ ___
 
 <p align="justify"> Raspberry Pi 4B with 8GB RAM is used to control LED ring arrays. Raspberry Pi pin number should match the connected pin for LED ring array. After connections are established, raspberry Pi can be used to trigger light illumination with different patterns. </p>
 
-#### Raspberry Pi Setup
+### Raspberry Pi Setup
 
 1 - Please follow the official Raspberry Pi dcoumentation for operating system setup: [OS Setup](https://www.raspberrypi.com/documentation/computers/getting-started.html)
 
