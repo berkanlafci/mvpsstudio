@@ -4,4 +4,4 @@
 # E-mail        : lafciberkan@gmail.com
 #-----
 
-python -B mvps/examples/exampleChangeLight.py --dataDir data/ --objectName object
+python -B mvps/examples/exampleAcquisition.py --dataDir data/ --objectName object
