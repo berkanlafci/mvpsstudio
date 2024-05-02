@@ -7,37 +7,18 @@
 
 <p align="justify"> Multiview stereo uses images taken from multiple angles to reconstruct the geometry of the scene/object. Photometric stereo extracts the surface normals using the information provided by the changing illumination conditions. We combine information provided by these two image acquisition methods to generate accurate 3D shape reconstruction. </p>
 
-## Hardware
+# Hardware
 [![Cameras](https://img.shields.io/badge/Cameras-Link-yellow)](https://www.mouser.ch/ProductDetail/Intel/82635DSD405?qs=Znm5pLBrcAKRij2Y1eB7yg%3D%3D)
 [![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi%204B-Link-violet)](https://www.digitec.ch/de/s1/product/raspberry-pi-4-8g-model-b-entwicklungsboard-kit-13276941?utm_source=google&utm_medium=cpc&campaignid=16472930352&adgroupid=136662242280&adid=585921168913&dgCidg=EAIaIQobChMI85HThYqPgwMV6BMGAB28iw8PEAAYAiAAEgLvSPD_BwE&gad_source=1&gclsrc=ds)
 [![LED](https://img.shields.io/badge/LED_Array-Link-red)](https://www.bastelgarage.ch/dfrobot-neopixel-ring-24x-ws2812-rgb-led)
 
-### Cameras
+### Raspberry Pi
 ___
-#### Intel RealSense D405
-
-<p align="justify"> Intel RealSense D405 is a short range camera with depth from stereo feature. Depth from stereo is information captured by the two cameras located on the same horizontal line. The cameras can reach to sub-milimeter accuracy. </p>
-
-### Checkerboards
-___
-<p align="justify"> Checkerboards are placed on the ground and sides of the scanner hardware setup for camera calibration. The functions to produce checkerboards with aruco markers are published under camera and examples. Below is an example of checkerboard used in the setup.</p>
-
-![checkerboard](docs/_img/checkerboard.png)
-
-### Controllers
-___
-#### Raspberry Pi
 
 <p align="justify"> Raspberry Pi 4B with 8GB RAM is used to control LED ring arrays. Raspberry Pi pin number should match the connected pin for LED ring array. After connections are established, raspberry Pi can be used to trigger light illumination with different patterns. </p>
 
-#### Linux Computer with GPU
+#### Raspberry Pi Setup
 
-<p align="justify"> A laptop with NVIDIA GPU that runs Ubuntu 22.04 is used to perform data acquisition, storage, 3D geometry reconstruction and analysis. </p>
-
-## Software
-
-### Raspberry Pi Setup
-___
 1 - Please follow the official Raspberry Pi dcoumentation for operating system setup: [OS Setup](https://www.raspberrypi.com/documentation/computers/getting-started.html)
 
 <p align="justify"> It is important to name the Raspberry Pi as "light" and user name as "person" with the sudo rights during the operating system installation. Raspberry Pi name will be used as "light" and user name on Raspberry Pi will be used as "person" in the following steps of installation and light related scripts in this package.</p>
@@ -86,6 +67,34 @@ sudo ~/.light/bin/pip3 install rpi_ws281x
 sudo ~/.light/bin/pip3 install adafruit-circuitpython-neopixel
 sudo ~/.light/bin/python3 -m pip install --force-reinstall adafruit-blinka
 ```
+
+### Linux Computer with GPU
+___
+
+<p align="justify"> A laptop with NVIDIA GPU that runs Ubuntu 22.04 is used to perform data acquisition, storage, 3D geometry reconstruction and analysis. </p>
+
+### Cameras
+___
+#### Intel RealSense D405
+
+<p align="justify"> Intel RealSense D405 is a short range camera with depth from stereo feature. Depth from stereo is information captured by the two cameras located on the same horizontal line. The cameras can reach to sub-milimeter accuracy. </p>
+
+<details>
+<summary>(Optional) Setting Up Intel RealSense SDK 2.0 (Click to Expand)</summary>
+
+<p align="justify"> Intel RealSense provides a SDK to control camera features and visualize the captures. Please follow the link below, if you want to setup and use Intel RealSense SDK (not required to run the scripts provided in this package). MVPS Studio uses 'pyrealsense' to control cameras and to perform acquisitions. 'pyrealsense' package is already included in the installation of MVPS Studio. There is no need to install 'pyrealsense' here. </p>
+
+Intel RealSense SDK Setup: https://dev.intelrealsense.com/docs/compiling-librealsense-for-linux-ubuntu-guide  
+
+</details>
+
+### Checkerboards
+___
+<p align="justify"> Checkerboards are placed on the ground and sides of the scanner hardware setup for camera calibration. The functions to produce checkerboards with aruco markers are published under camera and examples. Below is an example of checkerboard used in the setup.</p>
+
+![checkerboard](docs/_img/checkerboard.png)
+
+# Software
 
 ### MVPS Studio Installation
 ___
