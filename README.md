@@ -90,7 +90,14 @@ Intel RealSense SDK Setup: https://dev.intelrealsense.com/docs/compiling-libreal
 
 ### Checkerboards
 ___
-<p align="justify"> Checkerboards are placed on the ground and sides of the scanner hardware setup for camera calibration. The functions to produce checkerboards with aruco markers are published under camera and examples. Below is an example of checkerboard used in the setup.</p>
+<p align="justify"> Checkerboards are placed on the ground and sides of the scanner hardware setup for camera calibration. The functions to produce checkerboards with aruco markers are published under camera and examples. Below is an example of checkerboard used in the setup.  
+
+After installing MVPS Studio as described below, please run the following command in the terminal for checkerboard generation: </p>
+
+```bash
+conda activate mvps
+bash board.sh
+```
 
 ![checkerboard](docs/_img/checkerboard.png)
 

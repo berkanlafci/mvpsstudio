@@ -14,7 +14,7 @@ from mvps import *
 # argument parser
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataDir', default='data/board')
-parser.add_argument('--boardName', default='checkerboard.png')
+parser.add_argument('--boardName', default='checkerboard')
 parser.add_argument('--dictionaryName', default=cv2.aruco.DICT_5X5_250)
 parser.add_argument('--numVertical', default=6)
 parser.add_argument('--numHorizontal', default=2)
@@ -33,4 +33,4 @@ boardObject = BoardManager(dataDir=args.dataDir, boardName=args.boardName, dicti
 boardObject.generateCheckerboard()
 
 # print the directory of the saved checkerboard
-print('Checkerboard is saved at: {}'.format(os.path.abspath(args.dataDir + '/' + args.boardName)))
+print('Checkerboard is saved at: {}'.format(os.path.abspath(args.dataDir + '/' + args.boardName + '.png')))

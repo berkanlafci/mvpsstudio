@@ -1,5 +1,5 @@
 #-----
-# Description   : Board object properties and functions 
+# Description   : Board object properties and functions
 # Author        : Berkan Lafci
 # E-mail        : lafciberkan@gmail.com
 #-----
@@ -19,7 +19,7 @@ class BoardManager():
         self._dataDir           = dataDir # data folder to save generated images
         os.makedirs(dataDir, exist_ok=True) # create directory to save board images
         self._boardName         = boardName # name of the board
-        self.__boardDir         = self._dataDir + '/' + self._boardName # directory to save board image
+        self.__boardDir         = self._dataDir + '/' + self._boardName + '.png' # directory to save board image
 
         # board related parameters
         self._dictionaryName    = dictionaryName # number of small squares inside the big squares
