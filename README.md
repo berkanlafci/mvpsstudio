@@ -11,6 +11,7 @@
 [![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi%204B-Link-violet)](https://www.digitec.ch/de/s1/product/raspberry-pi-4-8g-model-b-entwicklungsboard-kit-13276941?utm_source=google&utm_medium=cpc&campaignid=16472930352&adgroupid=136662242280&adid=585921168913&dgCidg=EAIaIQobChMI85HThYqPgwMV6BMGAB28iw8PEAAYAiAAEgLvSPD_BwE&gad_source=1&gclsrc=ds)
 [![Cameras](https://img.shields.io/badge/Cameras-Link-yellow)](https://www.mouser.ch/ProductDetail/Intel/82635DSD405?qs=Znm5pLBrcAKRij2Y1eB7yg%3D%3D)
 [![LED](https://img.shields.io/badge/LED_Array-Link-red)](https://www.bastelgarage.ch/dfrobot-neopixel-ring-24x-ws2812-rgb-led)
+[![Laptop](https://img.shields.io/badge/Laptop-Link-blue)](https://www.digitec.ch/de/s1/product/lenovo-legion-pro-7-rtx-4090-16-intel-core-i9-13900hx-32-gb-2000-gb-ch-notebook-36343276)
 
 ### Raspberry Pi
 ___
@@ -71,7 +72,7 @@ sudo ~/.light/bin/python3 -m pip install --force-reinstall adafruit-blinka
 ### Linux Computer with GPU
 ___
 
-<p align="justify"> A laptop with NVIDIA GPU that runs Ubuntu 22.04 is used to perform data acquisition, storage, 3D geometry reconstruction and analysis. </p>
+<p align="justify"> A laptop with NVIDIA RTX 4090 GPU that runs Ubuntu 22.04 is used to perform data acquisition, storage, 3D geometry reconstruction and analysis. </p>
 
 ### Cameras
 ___
