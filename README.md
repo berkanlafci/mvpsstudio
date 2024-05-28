@@ -89,6 +89,10 @@ Intel RealSense SDK Setup: https://dev.intelrealsense.com/docs/compiling-libreal
 
 </details>
 
+### LED Arrays
+___
+
+
 ### Checkerboards
 ___
 <p align="justify"> Checkerboards are placed on the ground and sides of the scanner hardware setup for camera calibration. The functions to produce checkerboards with aruco markers are published under camera and examples. Below is an example of checkerboard used in the setup.</p>
@@ -97,7 +101,7 @@ ___
 
 ```bash
 conda activate mvps
-bash board.sh
+python -B mvps/examples/exampleBoard.py --dataDir data/board --boardName checkerboard
 ```
 
 ![checkerboard](docs/_img/checkerboard.png)
@@ -106,25 +110,45 @@ bash board.sh
 
 ### MVPS Studio Installation
 ___
-<p align="justify"> 1 - Install anaconda or miniconda. Then, run the following command to install required packages:</p>
+<p align="justify"> 1 - Install CUDA 11.8 and cuDNN 8.7.0.84 (MVPS Studio is tested with these versions):</p>
+
+```bash
+bash cudaInstallation1.sh
+sudo reboot now # restart the computer
+bash cudaInstallation2.sh
+```
+
+<p align="justify"> 2 - Install anaconda or miniconda. Then, run the following command to install required packages:</p>
 
 ```bash
 conda env create -f mvps.yml
 conda activate mvps
 ```
 
-<p align="justify"> 2 - Install mvps studio package provided with this repository:</p>
+<p align="justify"> 3 - Install mvps studio package provided with this repository:</p>
 
 ```bash
 pip install git+https://github.com/berkanlafci/mvpsstudio.git
 ```
 
-<details><summary>3 - (Optional) Install PyCOLMAP with CUDA Support (Click to Expand)</summary>  
+<details><summary> 4 - (Optional) Install PyCOLMAP with CUDA Support (Click to Expand)</summary>  
  
 <p align="justify"> You need to build PyCOLMAP from source for CUDA support. If you do not want to enable CUDA support for PyCOLMAP or you do not have a GPU with CUDA support, the conda environment in step 1 already includes PyCOLMAP for CPU. So, you do not need to install PyCOLMAP again and you can skip this step. Please note that, dense reconstruction from PyCOLMAP will not work without the CUDA support. </p>
 
 To install PyCOLMAP with CUDA support, please follow the instructions [here](https://github.com/colmap/colmap/tree/main/pycolmap).
 </details>
+
+### Acquisition
+___
+
+<p align="justify"> The acquisition script controls cameras and lights sources. Acquisitions are performed by enabling 12 Intel RealSense D405 cameras at different viewwing angles simultaneously. The light control script can be modified based on the user preferences. </p>
+
+<p align="justify"> Pleae run the following commands in your terminal to perform acquisition: </p> 
+
+```bash
+conda activate mvps
+python -B mvps/examples/exampleAcquisition.py --dataDir data/ --objectName object
+```
 
 ### Reconstruction
 ___
@@ -136,7 +160,7 @@ ___
 
 ```bash
 conda activate mvps
-bash recon.sh
+python -B mvps/examples/exampleRecon.py --dataDir data/ --objectName object
 ```
 
 ## Acknowledgements
