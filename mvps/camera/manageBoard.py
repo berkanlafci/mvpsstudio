@@ -12,7 +12,7 @@ class BoardManager():
 
     def __init__(self, dataDir='data/board', boardName='checkerBoard.png', dictionaryName=cv2.aruco.DICT_5X5_250, numVertical=6, numHorizontal=2, numPixels=1000, marginPixels=50, sideLength=30, gapLength=2):
         """
-        Board environment initialization with default parameters
+        Board environment initialization
         """
         
         # directory related parameters
@@ -42,6 +42,9 @@ class BoardManager():
     # generate checkerboard
 
     def generateCheckerboard(self):
+        """
+        Generate checkerboard image
+        """
 
         # define board using aruco library
         arucoDictionary = cv2.aruco.getPredefinedDictionary(self._dictionaryName) # define dictionary
