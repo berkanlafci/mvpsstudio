@@ -12,7 +12,7 @@ class BoardManager():
 
     def __init__(self, dataDir='data/board', boardName='checkerBoard.png', dictionaryName=cv2.aruco.DICT_5X5_250, numVertical=6, numHorizontal=2, numPixels=1000, marginPixels=50, sideLength=30, gapLength=2):
         """
-        Connect cameras by reading and saving information
+        Board environment initialization with default parameters
         """
         
         # directory related parameters
