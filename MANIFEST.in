@@ -1,1 +1,5 @@
 include README.md
+include mvps.yml
+include cudaInstallation1.sh
+include cudaInstallation2.sh
+include mvps/examples
