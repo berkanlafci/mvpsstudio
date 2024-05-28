@@ -89,10 +89,6 @@ Intel RealSense SDK Setup: https://dev.intelrealsense.com/docs/compiling-libreal
 
 </details>
 
-### LED Arrays
-___
-
-
 ### Checkerboards
 ___
 <p align="justify"> Checkerboards are placed on the ground and sides of the scanner hardware setup for camera calibration. The functions to produce checkerboards with aruco markers are published under camera and examples. Below is an example of checkerboard used in the setup.</p>
