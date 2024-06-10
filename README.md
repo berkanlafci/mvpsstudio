@@ -8,15 +8,20 @@
 <p align="justify"> Multiview stereo uses images taken from multiple angles to reconstruct the geometry of the scene/object. Photometric stereo extracts the surface normals using the information provided by the changing illumination conditions. We combine information provided by these two image acquisition methods to generate accurate 3D shape reconstruction. </p>
 
 # Hardware
-[![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi%204B-Link-violet)](https://www.digitec.ch/de/s1/product/raspberry-pi-4-8g-model-b-entwicklungsboard-kit-13276941?utm_source=google&utm_medium=cpc&campaignid=16472930352&adgroupid=136662242280&adid=585921168913&dgCidg=EAIaIQobChMI85HThYqPgwMV6BMGAB28iw8PEAAYAiAAEgLvSPD_BwE&gad_source=1&gclsrc=ds)
 [![Laptop](https://img.shields.io/badge/Laptop-Link-blue)](https://www.digitec.ch/de/s1/product/lenovo-legion-pro-7-rtx-4090-16-intel-core-i9-13900hx-32-gb-2000-gb-ch-notebook-36343276)
+[![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-Link-pink)](https://www.digitec.ch/en/s1/product/raspberry-pi-new-raspberry-pi-5-8gb-development-boards-kits-38955607)
 [![Cameras](https://img.shields.io/badge/Cameras-Link-yellow)](https://www.mouser.ch/ProductDetail/Intel/82635DSD405?qs=Znm5pLBrcAKRij2Y1eB7yg%3D%3D)
 [![LED](https://img.shields.io/badge/LED_Array-Link-red)](https://www.bastelgarage.ch/dfrobot-neopixel-ring-24x-ws2812-rgb-led)
+
+### Linux Computer with GPU
+___
+
+<p align="justify"> A laptop with NVIDIA GeForce RTX 4090 GPU that runs Ubuntu 22.04 is used to perform data acquisition, storage, 3D geometry reconstruction and analysis. After setting up Ubuntu 22.04 operating system on the laptop, please follow the instructions below for Raspberry Pi setup and MVPS Studio software installation (including CUDA and cuDNN setup). </p>
 
 ### Raspberry Pi
 ___
 
-<p align="justify"> Raspberry Pi 4B with 8GB RAM is used to control LED ring arrays. Raspberry Pi pin number should match the connected pin for LED ring array. After connections are established, raspberry Pi can be used to trigger light illumination with different patterns. </p>
+<p align="justify"> Raspberry Pi 5 with 8GB RAM is used to control LED ring arrays. LED ring array should be connected to GPIO 10 (pin number 19) on Raspberry Pi. After connections are established, Raspberry Pi can be used to trigger light illumination with different patterns. </p>
 
 ### Raspberry Pi Setup
 
@@ -24,7 +29,7 @@ ___
 
 <p align="justify"> It is important to name the Raspberry Pi as "light" and user name as "person" with the sudo rights during the operating system installation. Raspberry Pi name will be used as "light" and user name on Raspberry Pi will be used as "person" in the following steps of installation and light related scripts in this package.</p>
 
-<details><summary>2 - Setting up SSH for connection between Linux Computer and Raspberry Pi </summary>  
+<details><summary>2 - Set up SSH connection between Linux Computer and Raspberry Pi </summary>  
 
 First, you need to connect Linux computer to Raspberry Pi with an ethernet cable. After physical connection with ethernet cable is established, you need to go to network connection settings in Linux Computer. In network connection settings for wired connection between Linux Computer and Raspberry Pi, under ipv4, you need to choose the option "shared to other computers". Then, you need to apply changes before closing the window.
 
@@ -49,7 +54,14 @@ Host light
 ```
 Exit the file after saving.
 
-Please copy the public ssh key available in "light.pub" file. Now, you need to go to Raspberry Pi and run the following commands:
+Please copy the public ssh key available in "light.pub" file.
+
+Now, you need to ssh into the Raspberry Pi:
+```bash
+ssh person@light.local
+```
+
+Run the following commands in Raspberry Pi after ssh connection is established:
 ```bash
 mkdir .ssh/
 cd .ssh/
@@ -61,18 +73,21 @@ Paste the public key from Linux Computer (copied in previous step from "light.pu
 
 <p align="justify"> This step is important to run the automated data acquisition functions related to light illumination. You have an option to give other names to Raspberry Pi and user but any change in names requires modification in light control and acquisition scripts.</p>
 
-3 - Setup Python packages for light control on Raspberry Pi:
+3 - Set up light control interface on Raspberry Pi
+
+<p align="justify"> First, you need to enable SPI in Raspberry Pi config. Open Raspberry Pi config by running the following command in your terminal: </p>  
+
 ```bash
-python3 -m venv ~/.light
-sudo ~/.light/bin/pip3 install rpi_ws281x
-sudo ~/.light/bin/pip3 install adafruit-circuitpython-neopixel
-sudo ~/.light/bin/python3 -m pip install --force-reinstall adafruit-blinka
+sudo raspi-config
 ```
 
-### Linux Computer with GPU
-___
+<p align="justify"> In the menu, go to "3 - Interface Options" and enable "I3 - SPI". Exit with "ESC" button after saving the changes. Connect light control pin from LED array to GPIO 10 (MOSI). </p>
 
-<p align="justify"> A laptop with NVIDIA RTX 4090 GPU that runs Ubuntu 22.04 is used to perform data acquisition, storage, 3D geometry reconstruction and analysis. </p>
+4 - Set up Python packages for light control on Raspberry Pi:
+```bash
+python3 -m venv ~/.light
+sudo ~/.light/bin/pip3 install py-neopixel-spidev
+```
 
 ### Cameras
 ___
