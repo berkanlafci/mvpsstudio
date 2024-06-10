@@ -17,7 +17,7 @@ class RaspberryManager():
         # raspberry pi parameters
         self.raspberryName  = 'light' # name of the raspberry pi machine
         self.userName       = 'person' # change with your username
-        self.scriptName     = 'sparseFour.py' # name of the light control script
+        self.scriptName     = 'lightControl.py' # name of the light control script
     
     #-------------------------------#
     #---------- functions ----------#

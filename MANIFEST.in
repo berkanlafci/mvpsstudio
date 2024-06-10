@@ -3,3 +3,4 @@ include mvps.yml
 include cudaInstallation1.sh
 include cudaInstallation2.sh
 include mvps/examples/*.py
+include mvps/light/lightControl.py
